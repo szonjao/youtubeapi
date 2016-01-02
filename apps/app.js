@@ -35,9 +35,9 @@ function submitValuation(searchTerm){
 
 function displayResults(results){
 	console.log(results);
+	$("#search-results").html(" ");
+	$("#search-term").blur();
 	$.each(results, function(index, value){
-		$("#search-results").html(" ");
-		$("#search-term").blur();
 		$("#search-results").append(value.snippet.title + '</br>' );
 		$("#search-results").append('<img src="' + value.snippet.thumbnails.default.url + '"></br>');
 		$("#search-results").append('<a target="_blank" href="https://www.youtube.com/watch?v=' + value.id.videoId + '">Click here!</a></br>');
